@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class RestAPI {
 
 	@GetMapping(path = "/api")
-	public String Get(
+	public String GetList(
 		@RequestParam(name="param1", defaultValue="true") String param1,
 		@RequestParam(name="param2", defaultValue="false") String param2
 		) {
@@ -35,7 +35,7 @@ public class RestAPI {
 		return testval;
 	}
 	
-	@GetMapping(path = "/View")
+	@GetMapping(path = "/view")
 	public String GetView() {
 		System.out.println("view");
 		String testval = "view";
@@ -47,7 +47,7 @@ public class RestAPI {
 	//@RequestMapping("/restapi")
 	@GetMapping("/list/v1")
 	@ResponseBody
-    public String Get() 
+    public String GetListV1() 
 	{
 		try 
 		{
@@ -87,6 +87,14 @@ public class RestAPI {
 			return ex.getMessage();
 		}
 		
+	}	
+	
+	@GetMapping(path = "/view/v1")
+	public String GetViewV1() {
+		System.out.println("view/v1");
+		String testval = "view/v1";
+		
+		return testval;
 	}
 	
 	public String mapToJson(List<HashMap<String, Object>> map) throws Exception
