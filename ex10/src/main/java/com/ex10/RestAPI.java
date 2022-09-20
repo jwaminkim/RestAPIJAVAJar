@@ -97,6 +97,14 @@ public class RestAPI {
 		return testval;
 	}
 	
+	@GetMapping(path = "/view/v2")
+	public String GetViewV2() {
+		System.out.println("view/v2");
+		String testval = "view";
+		
+		return testval;
+	}
+	
 	public String mapToJson(List<HashMap<String, Object>> map) throws Exception
     {
         ObjectMapper mapper = new ObjectMapper();
